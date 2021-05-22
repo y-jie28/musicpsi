@@ -10,7 +10,8 @@
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li>
-            <a class="px-2 text-white" href="#">Login / Register</a>
+            <!-- if users click this link, the login / register modal should appear -->
+            <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal">Login / Register</a>
           </li>
           <li>
             <a class="px-2 text-white" href="#">Manage</a>
@@ -20,3 +21,15 @@
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  name: 'Haeader',
+  methods: {
+    toggleAuthModal() {
+      this.$store.state.authModalShow = !this.$store.state.authModalShow;
+      console.log(this.$store.state.authModalShow);
+    },
+  },
+};
+</script>
