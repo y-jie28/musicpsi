@@ -23,12 +23,16 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'Haeader',
   methods: {
-    toggleAuthModal() {
-      this.$store.commit('toggleAuthModal');
-    },
+    // use spread operator to merge objects
+    ...mapMutations(['toggleAuthModal']),
+    // toggleAuthModal() {
+    //   this.$store.commit('toggleAuthModal');
+    // },
   },
 };
 </script>
